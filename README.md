@@ -49,6 +49,7 @@ You can access the project in your browser at `http://127.0.0.1:8000/`.
 - Django 5.0.6
 - pillow==10.3.0
 - sqlparse==0.5.0
+- asgiref==3.8.1
 
 ## Support
 If you have any questions or need help with the project, feel free to contact me at:
