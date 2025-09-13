@@ -1,0 +1,48 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Sport News {% endblock title %}
+
+{% block content %}
+<style>
+    .fashion {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 30px 0 30px 250px;
+    }
+    .news-card {
+      display: flex;
+      flex-direction: column; /* kartochkani ustma-ust qilib qo'yadi */
+      align-items: center; /* hamma elementlarni o'rtaga hizalaydi */
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      text-align: center; /* matnlarni o‘rtalash */
+    }
+    .news-card img {
+      width: 250px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .news-content {
+      margin-top: 10px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+</style>
+
+<div class="fashion">
+  {% for news in sport_news %}
+  <a href="{{ news.get_absolute_url }}" class="news-card">
+    <img src="{{ news.image.url }}" alt="{{ news.title }}">
+    <div class="news-content">
+      <p class="title">{{ news.title }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock content %}
